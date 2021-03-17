@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/bootstrap";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";
+
+@media print {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+
+.sidebar .list-group a.router-link-active {
+    background: #18a1d9 !important;
+}
+
+.navbar-nav .dropdown-menu {
+    padding: 0 !important;
+    top: 45px !important;
+}
+
+.card {
+    border-radius: 0 !important;
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: none !important;
+}

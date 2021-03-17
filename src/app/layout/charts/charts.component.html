@@ -1,0 +1,130 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Charts'" [icon]="'fa-bar-chart-o'"></app-page-header>
+    <div class="row">
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Temperature
+                </div>
+                <div class="card-body">
+                    <!-- <canvas
+                        (chartClick)="chartClicked($event)"
+                        (chartHover)="chartHovered($event)"
+                        [chartType]="barChartType"
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [legend]="barChartLegend"
+                        [options]="barChartOptions"
+                        baseChart
+                    >
+                    </canvas> -->
+                    <app-gauge-chart chartId="temperature-gauge" [data]="tempGaugeData"></app-gauge-chart>
+                </div>
+                <!-- <div class="card-footer">
+                    <button (click)="randomize()" class="btn btn-info btn-sm">Update</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Humidity
+                </div>
+                <div class="card-body">
+                    <!-- <canvas
+                        (chartClick)="chartClicked($event)"
+                        (chartHover)="chartHovered($event)"
+                        [chartType]="doughnutChartType"
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        baseChart
+                        height="180px"
+                    >
+                    </canvas> -->
+                    <app-gauge-chart chartId="humidity-gauge"></app-gauge-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Clock
+                </div>
+                <div class="card-body">
+                    <div id="clock">
+                        <p class="time">{{time}}</p> <!--  {{ clock.time }} -->
+                        <p class="date">{{ date }}</p> <!--  {{ clock.date }} -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Temperature
+                </div>
+                <div class="card-body">
+                    <!-- <canvas
+                        (chartClick)="chartClicked($event)"
+                        (chartHover)="chartHovered($event)"
+                        [chartType]="radarChartType"
+                        [datasets]="radarChartData"
+                        [labels]="radarChartLabels"
+                        baseChart
+                        height="150px"
+                    >
+                    </canvas> -->
+                    <!-- <app-line-chart [data]="d3LineChartData"></app-line-chart> -->
+                    <temp-line-chart [type]='"Temperature"'></temp-line-chart>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Humidity
+                </div>
+                <div class="card-body">
+                    <!-- <canvas
+                        (chartClick)="chartClicked($event)"
+                        (chartHover)="chartHovered($event)"
+                        [chartType]="pieChartType"
+                        [data]="pieChartData"
+                        [labels]="pieChartLabels"
+                        baseChart
+                        height="150px"
+                    >
+                    </canvas> -->
+                    <!-- <app-line-chart [data]="d3LineChartData"></app-line-chart> -->
+                    <temp-line-chart [type]='"Humidity"'></temp-line-chart>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Map View
+                </div>
+                <div class="card-body">
+                    <!-- <p>Map body </p> -->
+                    <g-maps></g-maps>
+                    <!-- 
+                        <div id="googleMap" style="width:100%;height:400px;"></div> 
+                    -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

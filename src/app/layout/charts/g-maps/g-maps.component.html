@@ -1,0 +1,20 @@
+<!-- <button [disabled]="isTracking" class="btn btn-warning" (click)="findMe()">Find me</button> &nbsp;
+<button class="btn btn-primary" (click)="trackMe()">Track me</button>
+
+<br>
+<br>
+<div #gmap style="width:100%;height:300px"></div> -->
+
+<!-- <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="onMapClick($event)">
+    <agm-marker *ngIf="mapClicked" [latitude]="clickedLat" [longitude]="clickedLng">
+    </agm-marker>
+</agm-map> 
+ [zoomControl]="false" -->
+
+<agm-map [latitude]="currentPos.lat" [longitude]="currentPos.lng" [zoom]="zoom" [disableDefaultUI]="false"
+ (mapClick)="onMapClick($event)">
+	<agm-marker *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-marker>
+	<agm-polyline strokeColor="red">
+		<agm-polyline-point *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-polyline-point>
+	</agm-polyline>
+</agm-map>
